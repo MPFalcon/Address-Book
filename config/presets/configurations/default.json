@@ -1,0 +1,165 @@
+{
+  "version": 7,
+  "configurePresets": [
+    {
+      "name": "base",
+      "displayName": "Base Config",
+      "description": "Base configuration for building using Ninja generator",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "environment": {
+        "CCACHE_DIR": "${sourceDir}/build-ccache",
+        "CCACHE_TEMPDIR": "${sourceDir}/build-ccache/tmp"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": {
+          "type": "STRING",
+          "value": "clang"
+        },
+        "CMAKE_CXX_COMPILER": {
+          "type": "STRING",
+          "value": "clang++"
+        },
+        "CMAKE_MAKE_PROGRAM": {
+          "type": "FILEPATH",
+          "value": "/usr/bin/ninja"
+        },
+        "DOCUMENTATION": {
+          "type": "BOOL",
+          "value": "OFF"
+        }
+      }
+    },
+    {
+      "name": "native",
+      "inherits": "base",
+      "displayName": "native Config",
+      "description": "Native build using Ninja generator",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}"
+    },
+    {
+      "name": "armv5",
+      "inherits": "base",
+      "displayName": "armv5 Config",
+      "description": "arm version 5 build using Ninja generator and uclibc C library",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "toolchainFile": "${sourceDir}/toolchains/armv5-eabi--uclibc--stable-2025.08-1/toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_EXE_LINKER_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "-fuse-ld=lld"
+        }
+      }
+    },
+    {
+      "name": "armv7",
+      "inherits": "base",
+      "displayName": "armv7 Config",
+      "description": "arm version 7 build using Ninja generator and uclibc library",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "toolchainFile": "${sourceDir}/toolchains/armv7m--uclibc--stable-2025.08-1/toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_EXE_LINKER_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "-fuse-ld=lld"
+        }
+      }
+    },
+    {
+      "name": "arm64",
+      "inherits": "base",
+      "displayName": "arm64 Config",
+      "description": "arm64 build using Ninja generator and uclibc C library",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "toolchainFile": "${sourceDir}/toolchains/aarch64--uclibc--stable-2025.08-1/toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_EXE_LINKER_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "-fuse-ld=lld"
+        }
+      }
+    },
+    {
+      "name": "mips32el",
+      "inherits": "base",
+      "displayName": "mips32el Config",
+      "description": "Mips 32 little endian build using Ninja generator and uclibc C library",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "cacheVariables": {
+        "CMAKE_C_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "--target=mipsel-buildroot-linux-musl --sysroot=${sourceDir}/toolchains/mips32el--musl--stable-2025.08-1/mipsel-buildroot-linux-musl/sysroot --gcc-toolchain=${sourceDir}/toolchains/mips32el--musl--stable-2025.08-1"
+        },
+        "CMAKE_CXX_FLAGS_INIT": { 
+          "type": "STRING",
+          "value": "--target=mipsel-buildroot-linux-musl --sysroot=${sourceDir}/toolchains/mips32el--musl--stable-2025.08-1/mipsel-buildroot-linux-musl/sysroot --gcc-toolchain=${sourceDir}/toolchains/mips32el--musl--stable-2025.08-1"
+        }
+      }
+    },
+    {
+      "name": "mips32be",
+      "inherits": "base",
+      "displayName": "mips32be Config",
+      "description": "Mips 32 big endian build using Ninja generator and uclibc C library",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "toolchainFile": "${sourceDir}/toolchains/mips32/toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_EXE_LINKER_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "-fuse-ld=lld"
+        }
+      }
+    },
+    {
+      "name": "mips64be",
+      "inherits": "base",
+      "displayName": "mips64be Config",
+      "description": "Mips 64 big endian build using Ninja generator and uclibc C library",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "cacheVariables": {
+        "CMAKE_C_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "--target=mips64-buildroot-linux-musl --sysroot=${sourceDir}/toolchains/mips64-n32--musl--stable-2025.08-1/mips64-buildroot-linux-musl/sysroot --gcc-toolchain=${sourceDir}/toolchains/mips64-n32--musl--stable-2025.08-1"
+        },
+        "CMAKE_CXX_FLAGS_INIT": { 
+          "type": "STRING",
+          "value": "--target=mips64-buildroot-linux-musl --sysroot=${sourceDir}/toolchains/mips64-n32--musl--stable-2025.08-1/mips64-buildroot-linux-musl/sysroot --gcc-toolchain=${sourceDir}/toolchains/mips64-n32--musl--stable-2025.08-1"
+        },
+        "CMAKE_EXE_LINKER_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "-fuse-ld=lld"
+        }
+      }
+    },
+    {
+      "name": "mips64el",
+      "inherits": "base",
+      "displayName": "mips64el Config",
+      "description": "Mips 64 little endian build using Ninja generator and uclibc C library",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "cacheVariables": {
+        "CMAKE_C_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "--target=mips64el-buildroot-linux-musl --sysroot=${sourceDir}/toolchains/mips64el-n32--musl--stable-2025.08-1/mips64el-buildroot-linux-musl/sysroot --gcc-toolchain=${sourceDir}/toolchains/mips64el-n32--musl--stable-2025.08-1"
+        },
+        "CMAKE_CXX_FLAGS_INIT": { 
+          "type": "STRING",
+          "value": "--target=mips64el-buildroot-linux-musl --sysroot=${sourceDir}/toolchains/mips64el-n32--musl--stable-2025.08-1/mips64el-buildroot-linux-musl/sysroot --gcc-toolchain=${sourceDir}/toolchains/mips64el-n32--musl--stable-2025.08-1"
+        },
+        "CMAKE_EXE_LINKER_FLAGS_INIT": {
+          "type": "STRING",
+          "value": "-fuse-ld=lld"
+        }
+      }
+    }
+
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "version": 7,
+  "include": [
+    "default.json"
+  ],
+  "configurePresets": [
+    {
+      "name": "debug",
+      "inherits": "default",
+      "displayName": "Debug",
+      "description": "Debug build using Ninja generator",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Debug"
+        },
+        "CODECHECKER": {
+          "type": "BOOL",
+          "value": "ON"
+        }
+      }
+    },
+    {
+      "name": "test",
+      "inherits": "debug",
+      "displayName": "Test",
+      "description": "Test build using Ninja generator",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "ON"
+        },
+        "COVERAGE": {
+          "type": "BOOL",
+          "value": "ON"
+        }
+      }
+    },
+    {
+      "name": "release",
+      "inherits": "default",
+      "displayName": "release",
+      "description": "Release build using Ninja generator",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    }
+  ]
+}

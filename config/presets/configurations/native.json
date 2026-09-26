@@ -1,0 +1,242 @@
+{
+  "version": 7,
+  "include": [
+    "default.json"
+  ],
+  "configurePresets": [
+    {
+      "name": "debug",
+      "inherits": "native",
+      "displayName": "Debug",
+      "description": "Debug build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Debug"
+        },
+        "CODECHECKER": {
+          "type": "BOOL",
+          "value": "OFF"
+        }
+      }
+    },
+    {
+      "name": "debug-arm64",
+      "inherits": "arm64",
+      "displayName": "debug-arm64",
+      "description": "Debug build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Debug"
+        }
+      }
+    },
+    {
+      "name": "debug-mips32be",
+      "inherits": "mips32be",
+      "displayName": "debug-mips32be",
+      "description": "Debug build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Debug"
+        }
+      }
+    },
+    {
+      "name": "documentation",
+      "inherits": "native",
+      "displayName": "Documentation",
+      "description": "Builds documentation for project",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        },
+        "DOCUMENTATION": {
+          "type": "BOOL",
+          "value": "ON"
+        }
+      }
+    },
+    {
+      "name": "release-native",
+      "inherits": "native",
+      "displayName": "release",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    },
+    {
+      "name": "release-arm64",
+      "inherits": "arm64",
+      "displayName": "release",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    },
+    {
+      "name": "release-armv5",
+      "inherits": "armv5",
+      "displayName":  "release-armv5",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    },
+    {
+      "name": "release-armv7",
+      "inherits": "armv7",
+      "displayName": "release-armv7",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    },
+    {
+      "name": "release-mips32el",
+      "inherits": "mips32el",
+      "displayName":  "release-mips32el",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    },
+    {
+      "name": "release-mips32be",
+      "inherits": "mips32be",
+      "displayName": "release-mips32be",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    },
+    {
+      "name": "release-mips64el",
+      "inherits": "mips64el",
+      "displayName": "release-mips64el",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    },
+    {
+      "name": "release-mips64be",
+      "inherits": "mips64be",
+      "displayName": "release-mips64be",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      }
+    },
+    {
+      "name": "static-analysis",
+      "inherits": "debug",
+      "displayName": "Static Analysis",
+      "cacheVariables": {
+        "CODECHECKER": {
+          "type": "BOOL",
+          "value": "ON"
+        }
+      }
+    },
+    {
+      "name": "test",
+      "inherits": "debug",
+      "displayName": "Test",
+      "description": "Test build using Ninja generator",
+      "cacheVariables": {
+        "TESTING": {
+          "type": "BOOL",
+          "value": "ON"
+        },
+        "DOCUMENTATION": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "COVERAGE": {
+          "type": "BOOL",
+          "value": "ON"
+        }
+      }
+    }
+  ]
+}

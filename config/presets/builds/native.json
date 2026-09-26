@@ -1,0 +1,122 @@
+{
+  "version": 7,
+  "include": [
+    "../configurations/native.json"
+  ],
+  "buildPresets": [
+    {
+      "name": "debug-build",
+      "configurePreset": "debug",
+      "configuration": "Debug",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "debug-build-arm64",
+      "configurePreset": "debug-arm64",
+      "configuration": "Debug",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "debug-build-mips32be",
+      "configurePreset": "debug-mips32be",
+      "configuration": "Debug",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "documentation-build",
+      "configurePreset": "documentation",
+      "configuration": "Debug",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-native",
+      "configurePreset": "release-native",
+      "configuration": "Release",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-arm64",
+      "configurePreset": "release-arm64",
+      "configuration": "Release",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-armv5",
+      "configurePreset": "release-armv5",
+      "configuration": "Release",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-armv7",
+      "configurePreset": "release-armv7",
+      "configuration": "Release",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-mips32el",
+      "configurePreset": "release-mips32el",
+      "configuration": "Release",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-mips32be",
+      "configurePreset": "release-mips32be",
+      "configuration": "Release",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-mips64el",
+      "configurePreset": "release-mips64el",
+      "configuration": "Release",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-mips64be",
+      "configurePreset": "release-mips64be",
+      "configuration": "Release",
+      "targets": [
+        "install"
+      ]
+    },
+    {
+      "name": "release-build-all",
+      "configurePreset": "release-native",
+      "configuration": "Release",
+      "targets": [
+        "release-all-architectures"
+      ]
+    },
+    {
+      "name": "static-analysis-build",
+      "configurePreset": "static-analysis",
+      "configuration": "Debug"
+    },
+    {
+      "name": "test-build",
+      "configurePreset": "test",
+      "configuration": "Debug"
+    }
+  ]
+}

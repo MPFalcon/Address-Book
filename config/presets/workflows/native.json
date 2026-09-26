@@ -1,0 +1,196 @@
+{
+  "version": 7,
+  "include": [
+    "../configurations/native.json",
+    "../builds/native.json",
+    "../tests/native.json"
+  ],
+  "workflowPresets": [
+    {
+      "name": "debug-native",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "debug"
+        },
+        {
+          "type": "build",
+          "name": "debug-build"
+        }
+      ]
+    },
+    {
+      "name": "debug-arm64",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "debug-arm64"
+        },
+        {
+          "type": "build",
+          "name": "debug-build-arm64"
+        }
+      ]
+    },
+    {
+      "name": "debug-mips32be",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "debug-mips32be"
+        },
+        {
+          "type": "build",
+          "name": "debug-build-mips32be"
+        }
+      ]
+    },
+    {
+      "name": "release-native",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release-native"
+        },
+        {
+          "type": "build",
+          "name": "release-build-native"
+        }
+      ]
+    },
+    {
+      "name": "release-arm64",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release-arm64"
+        },
+        {
+          "type": "build",
+          "name": "release-build-arm64"
+        }
+      ]
+    },
+    {
+      "name": "release-armv5",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release-armv5"
+        },
+        {
+          "type": "build",
+          "name": "release-build-armv5"
+        }
+      ]
+    },
+    {
+      "name": "release-armv7",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release-armv7"
+        },
+        {
+          "type": "build",
+          "name": "release-build-armv7"
+        }
+      ]
+    },
+    {
+      "name": "release-mips32el",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release-mips32el"
+        },
+        {
+          "type": "build",
+          "name": "release-build-mips32el"
+        }
+      ]
+    },
+    {
+      "name": "release-mips32be",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release-mips32be"
+        },
+        {
+          "type": "build",
+          "name": "release-build-mips32be"
+        }
+      ]
+    },
+    {
+      "name": "release-mips64el",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release-mips64el"
+        },
+        {
+          "type": "build",
+          "name": "release-build-mips64el"
+        }
+      ]
+    },
+    {
+      "name": "release-mips64be",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release-mips64be"
+        },
+        {
+          "type": "build",
+          "name": "release-build-mips64be"
+        }
+      ]
+    },
+    {
+      "name": "static-analysis",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "static-analysis"
+        },
+        {
+          "type": "build",
+          "name": "static-analysis-build"
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "test"
+        },
+        {
+          "type": "build",
+          "name": "test-build"
+        },
+        {
+          "type": "test",
+          "name": "test"
+        }
+      ]
+    },
+    {
+      "name": "documentation",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "documentation"
+        },
+        {
+          "type": "build",
+          "name": "documentation-build"
+        }
+      ]
+    }
+  ]
+}

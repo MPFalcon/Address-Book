@@ -1,0 +1,91 @@
+{
+    "version": 10,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 10,
+        "patch": 0
+    },
+    "$comment": "Address Book - Debug Mode",
+    "configurePresets": [
+        {
+            "$comment": [
+                "Configure preset to debug version of the program"
+            ],
+            "name": "debug-native",
+            "displayName": "Debug Config",
+            "description": "Debug build using Ninja generator",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "environment": {
+                "CC": "/usr/bin/gcc",
+                "CXX": "/usr/bin/g++"
+            },
+            "vendor": {
+                "example.com/ExampleIDE/1.0": {
+                    "autoFormat": true
+                }
+            }
+        },
+        {
+            "name": "ninja-multi",
+            "inherits": "debug-native",
+            "displayName": "Ninja Multi-Config",
+            "description": "Debug build using Ninja Multi-Config generator",
+            "generator": "Ninja Multi-Config"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug-native",
+            "configurePreset": "debug-native"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "debug-native",
+            "configurePreset": "debug-native",
+            "output": {"outputOnFailure": true},
+            "execution": {"noTestsAction": "error", "stopOnFailure": true}
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "debug-native",
+            "configurePreset": "debug-native",
+            "generators": [
+                "TGZ"
+            ]
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "debug-native",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "debug-native"
+                },
+                {
+                    "type": "build",
+                    "name": "debug-native"
+                },
+                {
+                    "type": "package",
+                    "name": "debug-native"
+                },
+                {
+                "type": "test",
+                "name": "debug-native"
+                }
+            ]
+        }
+    ],
+    "vendor": {
+        "example.com/ExampleIDE/1.0": {
+            "autoFormat": false
+        }
+    }
+}

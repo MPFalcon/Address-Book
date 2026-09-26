@@ -1,0 +1,15 @@
+{
+  "version": 7,
+  "include": [
+    "../configurations/native.json"
+  ],
+  "testPresets": [
+    {
+      "name": "test",
+      "configurePreset": "test",
+      "configuration": "Debug",
+      "output": {"outputOnFailure": true},
+      "execution": {"noTestsAction": "error", "stopOnFailure": true}
+    }
+  ]
+}

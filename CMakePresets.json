@@ -1,0 +1,14 @@
+{
+  "version": 7,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 27,
+    "patch": 6
+  },
+  "include": [
+    "config/presets/configurations/native.json",
+    "config/presets/builds/native.json",
+    "config/presets/tests/native.json",
+    "config/presets/workflows/native.json"
+  ]
+}
